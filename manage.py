@@ -9,6 +9,10 @@ def main():
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "littlelemon.settings")
     try:
         from django.core.management import execute_from_command_line
+<<<<<<< HEAD
+=======
+        from django.core.management import execute_from_command_line
+>>>>>>> f79f4f2e08f9ca0b31cc99e06e2840e9a7cc34f8
     except ImportError as exc:
         raise ImportError(
             "Couldn't import Django. Are you sure it's installed and "
