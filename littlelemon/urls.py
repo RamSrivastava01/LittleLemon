@@ -12,4 +12,7 @@ urlpatterns = [
     path("restaurant/", include("restaurant.urls")),
     # Booking API (router)
     path("restaurant/booking/", include(router.urls)),
+    path("auth/", include("djoser.urls")),
+    path("auth/", include("djoser.urls.authtoken")),
+    path("restaurant/", include("restaurant.urls")),
 ]
