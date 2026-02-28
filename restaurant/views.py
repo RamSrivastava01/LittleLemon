@@ -27,7 +27,7 @@ class BookingViewSet(viewsets.ModelViewSet):
     serializer_class = BookingSerializer
     permission_classes = [IsAuthenticated]
 
-
+   
 @api_view(["GET"])
 @permission_classes([IsAuthenticated])
 def message(request):
