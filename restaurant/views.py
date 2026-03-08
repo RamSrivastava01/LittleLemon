@@ -8,12 +8,19 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
+from rest_framework import generics
+from .models import MenuItem
+from .serializers import MenuItemSerializer
 
 
 # GET all + POST new
 class MenuItemsView(generics.ListCreateAPIView):
-    queryset = Menu.objects.all()
-    serializer_class = MenuSerializer
+
+    queryset = MenuItem.objects.all()
+    serializer_class = MenuItemSerializer
+
+    def get_queryset(self):
+        return MenuItem.objects.all()
 
 
 # GET single + PUT + DELETE
@@ -27,7 +34,7 @@ class BookingViewSet(viewsets.ModelViewSet):
     serializer_class = BookingSerializer
     permission_classes = [IsAuthenticated]
 
-   
+
 @api_view(["GET"])
 @permission_classes([IsAuthenticated])
 def message(request):
